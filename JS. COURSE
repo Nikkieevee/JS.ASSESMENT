@@ -10,36 +10,50 @@ Assessment Requirements
 
 // create a variable to hold your NFT's
 const NFTs = []
+
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (name,_cutecolor,_cutetype) {
-   const NFTs = {
-    "name": _name,
-    "cutecolor" : _cutecolor,
-    "cutetype" : _cutetype
-   }
-   NFTs.push(NFT);
-   console.log("Minted" + _name)
-
+function mintNFT (_name, _age, _sex, _breed, _coat, _owner) {
+  const NFT = {
+    "name" : _name,
+    "age" : _age,
+    "sex" : _sex,
+    "breed" : _breed,
+    "coat" : _coat,
+    "owner" : _owner    
+  }
+  NFTs.push(NFT);
+  console.log((j + 1) + ". " + _name);
+  j++;
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    for(let i = 0;  4; i++) {  
-    Console.log(NFTs._[""]);
-    }
-
+  for(let i=0; i< NFTs.length; i++) {
+    console.log("\nGuest no. " + (i + 1));
+    console.log("Name: \t\t\t\t\t" + NFTs[i].name);
+    console.log("Age: \t\t\t\t\t\t" + NFTs[i].age);
+    console.log("Sex: \t\t\t\t\t\t" + NFTs[i].sex);
+    console.log("Breed: \t\t\t\t\t" + NFTs[i].breed);
+    console.log("Coat: \t\t\t\t\t" + NFTs[i].coat);
+    console.log("Owner's Name: \t" + NFTs[i].owner);
+  }
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-    console.log(NFTs.length);
-
+  console.log("\nTotal No. of Guests: " + NFTs.length);
 }
 
 // call your functions below this line
-mintNFT("Nikki Josephine", "Red", "Divoom");
+console.log("Attendees for this month's Pooch Playdate:")
+let j = 0;
+mintNFT("Chizu", "12", "Female", "Chihuahua - Shih Tzu Mix", "White with Black Spots", "Lai");
+mintNFT("Tokio", "3", "Female", "Corgi - Jack Russell Mix", "White & Brown", "Ron");
+mintNFT("Hunter", "1", "Male", "Jack Russell Terrier", "White & Brown", "Erin");
+mintNFT("Bugsy", "10", "Male", "Papillon", "White & Brown", "Bagsik");
+console.log("\n~GUESTS' PROFILES~");
 listNFTs();
 getTotalSupply();
